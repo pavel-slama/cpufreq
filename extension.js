@@ -224,8 +224,8 @@ const FrequencyIndicator = GObject.registerClass({
     });
     this.statusLabel.style = title_style;
     let _box = new St.BoxLayout();
-    _box.add_actor (this.statusLabel);
-    this.add_actor (_box);
+    _box.add_child (this.statusLabel);
+    this.add_child (_box);
     this.connect ('button-press-event', () => {
       var args = extmode ? "--extension" : "";
       if (splash)
@@ -431,7 +431,7 @@ const FrequencyIndicator = GObject.registerClass({
     if (!this.splash)
       this.splash = Gio.icon_new_for_string (EXTENSIONDIR + "/data/splash.svg");
     let splash = new St.Icon ({gicon: this.splash, icon_size: width});
-    Main.uiGroup.add_actor (splash);
+    Main.uiGroup.add_child (splash);
 
     splash.set_position (Math.floor (monitor.width / 2 - splash.width / 2),
       Math.floor (monitor.height / 2 - splash.height / 2));
@@ -457,7 +457,7 @@ const FrequencyIndicator = GObject.registerClass({
     //var text = new St.Label ({text: message, style_class: style?style:'cpufreq-notify'});
     var text = new St.Label ({text: message, style_class: "modal-dialog audio-selection-content restart-message"});
     text.opacity = 255;
-    Main.uiGroup.add_actor (text);
+    Main.uiGroup.add_child (text);
   
     text.set_position (Math.floor (Main.layoutManager.primaryMonitor.width / 2 - text.width / 2),
       Math.floor (Main.layoutManager.primaryMonitor.height / 2 - text.height / 2));
