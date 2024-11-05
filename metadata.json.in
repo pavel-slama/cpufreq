@@ -3,7 +3,7 @@
   "name": "cpufreq",
   "settings-schema": "org.gnome.shell.extensions.cpufreq",
   "shell-version": [
-    "45"
+    "47"
   ],
   "url": "https://github.com/konkor/cpufreq",
   "uuid": "cpufreq@konkor",
